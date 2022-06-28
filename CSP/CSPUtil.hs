@@ -17,16 +17,16 @@ type Assignment = Array Int Int
 type PartialAssignment = Array Int (Maybe Int)
 
 genBlankUCSet :: Int -> UnaryConstraintSet
-genBlankUCSet n = array (1,n) [(i,[]) | i <- [1..n]]
+genBlankUCSet n = array (0,n-1) [(i,[]) | i <- [0..n-1]]
 
 genBlankBCSet :: Int -> BinaryConstraintSet
-genBlankBCSet n = array ((1,1),(n,n)) [((i,j),[]) | i <- [1..n], j <- [1..n]]
+genBlankBCSet n = array ((0,0),(n-1,n-1)) [((i,j),[]) | i <- [0..n-1], j <- [0..n-1]]
 
 genDomainsOfRange :: Int -> Int -> Int -> Domains
-genDomainsOfRange n lower upper = array (1,n) [(i,[lower..upper]) | i <- [1..n]]
+genDomainsOfRange n lower upper = array (0,n-1) [(i,[lower..upper]) | i <- [0..n-1]]
 
 genEmptyPartialAssignment :: BinaryCSP -> PartialAssignment
-genEmptyPartialAssignment (domains,_,_) = listArray (bounds domains) [ Nothing | i <- [1..] ]
+genEmptyPartialAssignment (domains,_,_) = listArray (bounds domains) [ Nothing | i <- [0..] ]
 
 addUConstraint :: UnaryConstraintSet -> UnaryConstraint -> Int -> UnaryConstraintSet
 addUConstraint ucs c i = ucs//[(i, c:(ucs!i))]

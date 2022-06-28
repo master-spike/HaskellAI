@@ -40,7 +40,7 @@ satisfyUCS doms ucs = doms//[(i, filter (allsat (ucs!i)) (doms!i)) | i <- [l..u]
           allsat []     _ = True
 
 forwardChecking :: BinaryCSP -> Maybe Assignment
-forwardChecking (domains,ucs,bcs) = fwchk (domains,ucs,bcs) (genEmptyPartialAssignment (domains,ucs,bcs))
+forwardChecking (domains,ucs,bcs) = fwchk (satisfyUCS domains ucs,ucs,bcs) (genEmptyPartialAssignment (domains,ucs,bcs))
     where firstSomething Nothing x  = x
           firstSomething (Just x) _ = Just x
           fwchk (dom,uc,bc) pa
