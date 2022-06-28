@@ -1,4 +1,4 @@
-module Sudoku() where
+module Sudoku(sudokuToBinaryCSP, assignmentToSolution) where
 import CSPUtil
 import BinaryCSPSolver
 import Data.Array

@@ -23,9 +23,13 @@ hasEmptyDomain = elem []
 
 nextAssignment :: Domains -> PartialAssignment -> (Int,Int)
 nextAssignment domains pa = (var, head (domains!var))
-    where findNothing ((_,Just _):xs) = findNothing xs
-          findNothing ((i,Nothing):_) = i
-          var = findNothing (assocs pa)
+    where findNothing ((_,Just _):xs)  = findNothing xs
+          findNothing ((i,Nothing):xs) = (i, length (domains!i)):(findNothing xs)
+          findNothing [] = []
+          smallerR (v,w) (x,y)  = if w < y then (v,w) else (x,y)
+          mostConstrained [p]   = p
+          mostConstrained (x:xs) = smallerR x (mostConstrained xs)
+          var = ((\(x,y) -> x) .mostConstrained . findNothing . assocs) pa
           
     
 assign :: Domains -> PartialAssignment -> Int -> Int -> (Domains,PartialAssignment)
