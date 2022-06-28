@@ -1,5 +1,6 @@
-module AStarSearch(astartree,astargraph) where
-import Search(treesearch,graphsearch)
+module Search.AStarSearch(astartree,astargraph) where
+import Search.Search(treesearch,graphsearch)
+import Data.Hashable(Hashable)
 
 
 pqinsert :: (a -> Int) -> a -> [a] -> [a]
@@ -13,7 +14,7 @@ astartree start goaltest succFn heuristic =
     treesearch start goaltest succFn (pqinsert f)
     where f (p,c) = heuristic (head p) + c
     
-astargraph :: (Eq a) => a -> (a -> Bool) -> (a -> [(a,Int)]) -> (a -> Int) -> Maybe ([a],Int)
+astargraph :: (Eq a, Hashable a) => a -> (a -> Bool) -> (a -> [(a,Int)]) -> (a -> Int) -> Maybe ([a],Int)
 astargraph start goaltest succFn heuristic = 
     graphsearch start goaltest succFn (pqinsert f)
     where f (p,c) = heuristic (head p) + c

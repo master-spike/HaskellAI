@@ -1,6 +1,6 @@
-module Sudoku(sudokuToBinaryCSP, assignmentToSolution) where
-import CSPUtil
-import BinaryCSPSolver
+module CSP.Sudoku(sudokuToBinaryCSP, assignmentToSolution) where
+import CSP.CSPUtil
+import CSP.BinaryCSPSolver
 import Data.Array
 
 --                   sqrtSize | (coords,val)  => BinaryCSP specification

@@ -1,4 +1,4 @@
-module CSPUtil(BinaryConstraint, UnaryConstraint, UnaryConstraintSet, BinaryConstraintSet,
+module CSP.CSPUtil(BinaryConstraint, UnaryConstraint, UnaryConstraintSet, BinaryConstraintSet,
                Domains, BinaryCSP, Assignment, PartialAssignment, validBinAssignment,
                genBlankUCSet, genBlankBCSet, genDomainsOfRange, genEmptyPartialAssignment,
                addUConstraint, addBConstraint, paIsComplete, paToFullA) where

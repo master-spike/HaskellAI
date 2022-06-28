@@ -1,6 +1,6 @@
-module BinaryCSPSolver(forwardChecking) where
+module CSP.BinaryCSPSolver(forwardChecking) where
 
-import CSPUtil
+import CSP.CSPUtil
 import Data.Array
 
 

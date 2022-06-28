@@ -1,5 +1,5 @@
-module SearchTest(Node, cost) where
-import Search(treesearch)
+module Search.SearchTest(Node, cost) where
+import Search.Search(treesearch)
 
 
 data Node = A | B | C | D | E | F | G deriving (Read,Show,Eq,Enum)

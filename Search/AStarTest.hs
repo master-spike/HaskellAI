@@ -1,5 +1,5 @@
-module AStarTest(solvemazetree,solvemazegraph) where
-import AStarSearch(astartree,astargraph)
+module Search.AStarTest(solvemazetree,solvemazegraph) where
+import Search.AStarSearch(astartree,astargraph)
 
 
 ups = [[],[0,1,2,3,4],[0,5,6,7],[2,6,7],[3,4,5,6,7],[0,1,2,4,5,6],[0,3,4,5,7],[1,2,3,6,7]]
