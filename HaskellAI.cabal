@@ -17,7 +17,8 @@ build-type:          Simple
 extra-source-files:  CHANGELOG.md, README.md
 
 library
-  exposed-modules:     Search.AStarTest, Search.SearchTest, Search.AStarSearch, Search.Search, CSP.CSPUtil, CSP.Sudoku, CSP.BinaryCSPSolver
+  exposed-modules:     Search.AStarTest, Search.SearchTest, Search.AStarSearch, Search.Search,
+                       CSP.CSPUtil, CSP.Sudoku, CSP.BinaryCSPSolver, CSP.GraphColoring
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.13 && <4.14, array >=0.5 && <0.6,
