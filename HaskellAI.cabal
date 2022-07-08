@@ -17,7 +17,9 @@ build-type:          Simple
 extra-source-files:  CHANGELOG.md, README.md
 
 library
-  exposed-modules:     Search.AStarTest, Search.SearchTest, Search.AStarSearch, Search.Search,
+  exposed-modules:     GameTheory.Minimax, GameTheory.TicTacToe
+                       LocalSearch.LocalSearch, LocalSearch.TravellingSalesman,
+                       Search.AStarTest, Search.SearchTest, Search.AStarSearch, Search.Search,
                        CSP.CSPUtil, CSP.Sudoku, CSP.BinaryCSPSolver, CSP.GraphColoring
   -- other-modules:
   -- other-extensions:

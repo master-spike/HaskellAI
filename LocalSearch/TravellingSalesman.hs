@@ -1,6 +1,6 @@
 module LocalSearch.TravellingSalesman() where
 
-import LocalSearch
+import LocalSearch.LocalSearch
 
 -- TSP is number of locations and a distance for each location pair
 type TSP a =  (Int, Int -> Int -> a)

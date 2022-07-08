@@ -1,4 +1,4 @@
-module LocalSearch(hillClimbing, bestNeighbour) where
+module LocalSearch.LocalSearch(hillClimbing, bestNeighbour) where
 
 
 
